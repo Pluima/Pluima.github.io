@@ -71,6 +71,110 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/04/a/" class="article-date">
+  <time class="dt-published" datetime="2022-11-04T09:41:28.995Z" itemprop="datePublished">2022-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/04/a/">a</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="卷积神经计算"><a href="#卷积神经计算" class="headerlink" title="卷积神经计算"></a>卷积神经计算</h1><p><code>#include&lt;iostream&gt;</code><br><code>#include&lt;string&gt;</code><br><code>#include&lt;algorithm&gt;</code><br><code>#include&lt;iomanip&gt;</code><br><code>#include&lt;vector&gt;</code><br><code>#include&lt;math.h&gt;</code><br><code>struct lv &#123;     long long qi[3][3];     double bias; </code>};<br><code>using namespace std; </code>int main() {<br>    long long dai[7][7];<br>    for (int i &#x3D; 0; i &lt; 7; i++) {<br>        for (int t &#x3D; 0; t &lt; 7; t++) {</p>
+<pre><code>        if (i == 0 || i == 6) &#123; dai[i][t] = 0; &#125;
+         if(t==0||t==6) &#123; dai[i][t] = 0; &#125;
+    &#125;
+&#125;
+for (int i = 1; i &lt; 6; i++) &#123;
+    for (int t = 1; t &lt; 6; t++) &#123;
+
+        cin &gt;&gt; dai[i][t];
+    &#125;
+&#125;
+int num;
+cin &gt;&gt; num;
+lv a[num];
+for (int j = 0; j &lt; num;j++) &#123;
+    for (int i = 0; i &lt; 3; i++) &#123;
+        for (int t = 0; t &lt; 3; t++) &#123;
+            cin &gt;&gt; a[j].qi[i][t];
+        &#125;
+    &#125;
+
+&#125;
+lv b[num];
+for (int p = 0; p &lt; num; p++) &#123;
+    for (int i = 0; i &lt; 3; i++) &#123;
+        for (int t = 0; t &lt; 3; t++) &#123;
+            b[p].qi[i][t] = 0;
+        &#125;
+    &#125;
+&#125;
+lv c[num];
+for (int p = 0; p &lt; num; p++) &#123;
+    for (int i = 0; i &lt; 3; i++) &#123;
+        for (int t = 0; t &lt; 3; t++) &#123;
+            c[p].qi[2-i][2-t] = a[p].qi[i][t];
+        &#125;
+    &#125;
+&#125;
+
+for (int p = 0; p &lt; num; p++) &#123;
+    for (int i = 0; i &lt; 3; i++) &#123;
+        for (int t = 0; t &lt; 3; t++) &#123;
+            for (int j = 0; j &lt; 3; j++) &#123;
+                for (int o = 0; o &lt; 3; o++) &#123;
+                    b[p].qi[i][t] += (a[p].qi[j][o]*dai[j+i*2][o+t*2]);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+for (int p = 0; p &lt; num; p++) &#123;
+    cin &gt;&gt; b[p].bias;
+&#125;
+for (int p = 0; p &lt; num; p++) &#123;
+    for (int i = 0; i &lt; 3; i++) &#123;
+        for (int t = 0; t &lt; 3; t++) &#123;
+            cout&lt;&lt;b[p].qi[i][t]+b[p].bias&lt;&lt;&quot; &quot;;
+        &#125;
+        cout &lt;&lt; endl;
+    &#125;
+&#125;
+return 0;
+</code></pre>
+<p>}&#96;</p>
+<p>date: 2022-11-04 17:41:28<br>tags:</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/04/a/" data-id="cla2ctuv90001kwjp6h0b20zz" data-title="a" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/11/04/hello-world/" class="article-date">
@@ -110,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/04/hello-world/" data-id="cla2cewh60002dsjpakqle9mn" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/04/hello-world/" data-id="cla2ctuvc0002kwjpcnrs8si4" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -151,6 +255,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/11/04/a/">a</a>
+          </li>
         
           <li>
             <a href="/2022/11/04/hello-world/">Hello World</a>
